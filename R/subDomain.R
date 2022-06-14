@@ -20,6 +20,8 @@ subDomain <- function(surface.object, cut.threshold){
                                               surface.object[[i]]$fit),
                        threshold = cut.threshold)
     
+    if(cutOff > length(surface.object$par1$parameter)-2){cutOff <- length(surface.object$par1$parameter)-2}
+    
     rmParValues <- match(sort(surface.object[[i]]$fit)[c(1:cutOff)],
                          surface.object[[i]]$fit)
     
@@ -28,8 +30,7 @@ subDomain <- function(surface.object, cut.threshold){
     
     names(limited_ParValues) <- c("parameters", "fit")
     restrict_Domain[[i]] <- limited_ParValues
-    names(restrict_Domain)[[i]] <- c(paste("param", i, sep = ""))
-    
+    names(restrict_Domain)[[i]] <- c(paste("param", i, sep = ""))    
   }
   return(restrict_Domain)
 }
