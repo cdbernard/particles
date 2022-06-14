@@ -20,10 +20,14 @@ IPMdistance <- function(IPM.pre, observed.stage.dist, evaluate.params, i){
   fitted_IPM <- generateIPM(IPM.pre, c(evaluate.params[i,1],
                                        evaluate.params[i,2]))
   
-  particle_StageDist <- stableStage(fitted_IPM)
+  particle_StageDist <- NA
+  particle_StageDist <- try(stableStage(fitted_IPM))
   
   distance <- ShannonDistance(observed.stage.dist,
                               particle_StageDist)
+  if(is.na(distance)){
+    distance <- 0
+   }
   
   return(distance)
 }
