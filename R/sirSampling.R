@@ -13,13 +13,13 @@
 #' 
 
 
-sirSampling <- function(resample.dataframe, resample.weight){
+sirSampling <- function(resample.dataframe, resample.weight, particleNumber){
   
   preSample <- list()
   
   for(i in 1:length(resample.dataframe)){
     preSample[[i]] <- sample(resample.dataframe[[i]]$parameters,
-                            particle_Number,
+                            particleNumber,
                             replace = TRUE,
                             prob = resample.dataframe[[i]]$fit^resample.weight)
     names(preSample)[[i]] <- paste("param", i, sep = "")
