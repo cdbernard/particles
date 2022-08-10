@@ -15,7 +15,7 @@ dispersion <- function(sample, limDataframe){
   for(i in 1:length(limDataframe)){
     binWidth <- limDataframe[[i]]$parameters[2]-limDataframe[[i]]$parameters[1]
     halfWidth <- binWidth/2
-    sampleDispersed[[i]] <- runif(particle_Number,
+    sampleDispersed[[i]] <- runif(particleNumber,
                                   sample[[i]]-halfWidth,
                                   sample[[i]]+halfWidth)
     names(sampleDispersed)[[i]] <- paste("param", i, sep = "")
