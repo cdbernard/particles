@@ -12,6 +12,6 @@
 
 
 fertility <- function(x0, fertInt, fertSlope){
-  fertilityProb <- exp(fertInt + fertSlope*x0)
-  return(fertilityProb)
+  beta_f <- exp(fertInt + fertSlope * z)
+  return(beta_f/(1+beta_f))
 }
