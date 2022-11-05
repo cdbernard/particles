@@ -11,7 +11,9 @@
 #' @export
 
 
-fertility <- function(x0, fertInt, fertSlope){
-  beta_f <- exp(fertInt + fertSlope * z)
-  return(beta_f/(1+beta_f))
+fertility <- function(z,
+                      fertInt,
+                      fertSlope){ # Could be linear or logistic
+  alpha <- fertInt + fertSlope * z
+  return(alpha)
 }
