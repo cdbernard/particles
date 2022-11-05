@@ -11,7 +11,7 @@
 #' @export
 
 
-conditionalSize <- function(x1, recruitMean, recruitSD){
-  estabSize <- dnorm(x1, mean = recruitMean, sd = recruitSD)
-  return(estabSize)
+conditionalSize <- function(recruitment){
+  recruitment <- recruitment
+  return(recruitment)
 }
