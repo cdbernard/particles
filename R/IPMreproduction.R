@@ -15,14 +15,13 @@
 #' @export
 #' 
 
-reproduction <- function(x1,
-                         x0,
-                         estabProbability,
-                         recruitMean,
-                         recruitSD,
+reproduction <- function(z_prime,
+                         z,
                          fertInt,
-                         fertSlope){
-  establishment(estabProbability)*
-  conditionalSize(x1, recruitMean, recruitSD)*
-  fertility(x0, fertInt, fertSlope)
+                         fertSlope,
+                         establishment,
+                         recruitment){
+  return(fertility(z, fertInt, fertSlope)*
+           establishment*
+           conditionalSize(recruitment))
 }
