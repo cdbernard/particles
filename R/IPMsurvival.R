@@ -11,6 +11,6 @@
 
 
 survival <- function(x0, survInt, survSlope){
-  u <- exp(survInt + survSlope*x0)
-  return(u/(1+u))
+  u <- survInt + survSlope*x0
+  return(u)
 }
