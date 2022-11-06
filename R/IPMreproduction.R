@@ -20,8 +20,8 @@ reproduction <- function(z_prime,
                          fertInt,
                          fertSlope,
                          establishment,
-                         recruitment){
+                         recruitSize){
   return(fertility(z, fertInt, fertSlope)*
            establishment*
-           conditionalSize(recruitment))
+           conditionalSize(recruitSize))
 }
