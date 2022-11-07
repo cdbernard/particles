@@ -23,5 +23,5 @@ reproduction <- function(z_prime,
                          recruitSize){
   return(fertility(z, fertInt, fertSlope)*
            establishment*
-           conditionalSize(recruitSize))
+           dnorm(z_prime, conditionalSize(recruitSize), 0.2))
 }
