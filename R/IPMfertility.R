@@ -14,6 +14,7 @@
 fertility <- function(z,
                       fertInt,
                       fertSlope){ # Could be linear or logistic
-  alpha <- (fertInt + fertSlope * z)*dunif(z, min = 3, max = 15)*(1/dunif(z, min = 3, max = 15)
-  return(alpha)
+  initialProfile <- fertInt + fertSlope * z)
+  truncateProfile <- initialProfile*dunif(z, min = 3, max = 15)*(1/dunif(z, min = 3, max = 15))
+  return(truncateProfile)
 }
