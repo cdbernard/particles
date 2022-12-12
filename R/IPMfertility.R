@@ -14,8 +14,6 @@
 fertility <- function(z,
                       fertInt,
                       fertSlope){ # Could be linear or logistic
-  initialProfile <- fertInt + fertSlope * z
-  
   u <- fertInt + x0*fertSlope
   rawFertility <- u
   rawFertility[which(rawFertility>1)] <- 1
