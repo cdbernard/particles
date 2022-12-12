@@ -14,6 +14,9 @@
 fertility <- function(z,
                       fertInt,
                       fertSlope){ # Could be linear or logistic
-  fertilityOut <- fertInt + z^fertSlope
-  return(fertilityOut)
+  initialProfile <- fertInt + fertSlope * z
+  truncationLine <- dunif(z, min = 3, max = 15) * (1/dunif(z, min = 3, max = 15))
+  truncateProfile <- initialProfile*truncationLine
+  truncateProfile[is.na(truncateProfile)] <- 0
+  return(truncateProfile)
 }
