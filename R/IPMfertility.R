@@ -11,7 +11,7 @@
 #' @export
 
 
-fertility <- function(z,
+fertility <- function(x0,
                       fertInt,
                       fertSlope){ # Could be linear or logistic
   u <- fertInt + x0*fertSlope
