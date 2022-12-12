@@ -11,6 +11,7 @@
 
 
 survival <- function(x0, survInt, survSlope){
+  u <- survInt + x0*survSlope
   rawSurvival <- u
   posOnlySurvival <- dunif(rawSurvival, min = 0, max = 1) * (1/dunif(rawSurvival, min = 0, max = 1))
   truncateSurvival <- rawSurvival*posOnlySurvival
